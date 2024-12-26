@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE QUIZzz</title>
+    <link rel="icon" href="icon.jpeg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header d-flex justify-content-between align-items-center p-3">
+        <div class="menu-container d-flex align-items-center">
+            <button class="menu-icon" onclick="myFunction()">
+                <img src="depositphotos_232839020-stock-illustration-simple-list-menu-icon-rainbow.jpg" alt="Menu" width="60">
+            </button>
+            <nav class="dropdown-menu" id="dropdownMenu">
+                <a href="#signup">Signup</a>
+                <a href="#login">Login</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+        
+        
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" width="180" height="100">
+        </div>
+        
+        <div class="auth-buttons">
+            <button class="btn login-btn" onclick="redirectToLogin()">Login</button>
+            <button id="contactBtn" class="btn contact-btn">Contact Us</button>
+        
+    
+            <div class="contact-info hidden" id="contactInfo">
+                <ul>
+                    <li><a href="mailto:fathimanadhamk@gmail.com">fathimanadhamk@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/fathima-nadha-mk-007260255" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main text-white py-5">
+        <div class="container d-flex justify-content-center align-items-center ">
+            <div class="quiz-section text-center">
+                <h1>Welcome to CODE QUIZzz</h1>
+                <p>Test your coding knowledge and skills with fun and challenging questions!</p>
+                <button class="btn start-btn" onclick="nextpage()">Start Quiz</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer text-center text-white p-3">
+        <p>&copy; 2024 CODE QUIZzz. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

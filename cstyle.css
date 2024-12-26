@@ -1,0 +1,40 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(16, 18, 19);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make sure the body takes full height */
+}
+
+/* Animation definition 
+@keyframes shake {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+*/
+#quiz-container{
+    font-size: 30px;
+    margin-left: 398px;
+    margin-top:104px;
+}
+#submitBtn{
+    margin-left: 444px;
+    margin-top: 41px;
+    height: 40px;
+    width: 160px;
+    background:rgb(64, 228, 88);
+}
+#result{
+      font-size: x-large;
+      margin-left: 300px;
+}

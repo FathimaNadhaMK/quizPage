@@ -1,0 +1,46 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(16, 18, 19);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make sure the body takes full height */
+}
+.h {
+    font-family: "Copperplate", fantasy;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0; /* Remove negative margins */
+}
+
+.p1 {
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+
+/* Confetti container */
+#confetti-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Confetti won't block interactions */
+}
+
+/* Confetti styles - Rectangular shape */
+.confetti {
+    position: absolute;
+    width:6px;
+    height: 6px;
+    background-color: red; /* Confetti color */
+    opacity: 2px;
+    border-radius: 20px;
+    animation: confetti-fall 2s forwards, confetti-scatter 1s ease-out;
+}
