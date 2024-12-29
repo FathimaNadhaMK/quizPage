@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Score</title>
     <link rel="stylesheet" href="score.css">
-    <script src="score.js" defer></script> <!-- Include score.js -->
+    <script src="score.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <h1 class="h">Quiz Completed!!!</h1>
-    <p style="margin-left:50px; margin-top: 42px; font-size:70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-        Your final score is: <span id="finalScore"></span>
-    </p> <!-- Display score here -->
-    
-    <div class="confetti-trigger text-center mt-5">
-        <img src="https://png.pngtree.com/png-clipart/20230915/original/pngtree-colorfull-birthday-confetti-poppers-vector-png-image_12224628.png" alt="Click for confetti!" 
-             onclick="triggerConfetti()" style="cursor: pointer; width: 100px;">
+    <div class="score-container">
+        <h1 class="heading">Quiz Completed!</h1>
+        <p class="score-message" id="feedbackMessage"></p>
+        <p class="score-display">
+            Your final score is: <span id="finalScore"></span> / 10
+        </p>
+        
+        <div class="confetti-trigger">
+            <img 
+                src="https://png.pngtree.com/png-clipart/20230915/original/pngtree-colorfull-birthday-confetti-poppers-vector-png-image_12224628.png" 
+                alt="Click for confetti!" 
+                style="cursor: pointer; width: 100px; margin-top: 20px;"
+            >
+            <button id="tryAgainBtn">Try Again</button>
+        </div>
     </div>
-    
-    <div id="confetti-container"></div>
 </body>
 </html>

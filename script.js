@@ -45,3 +45,13 @@ function nextpage(){
 function cprog(){
   window.location.href='c.html';
 }
+
+function javaprog(){
+  window.location.href='java.html';
+}
+function db(){
+  window.location.href='dbms.html';
+}
+function python(){
+  window.location.href='python.html';
+}

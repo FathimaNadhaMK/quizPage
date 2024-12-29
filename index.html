@@ -13,11 +13,11 @@
     <header class="header d-flex justify-content-between align-items-center p-3">
         <div class="menu-container d-flex align-items-center">
             <button class="menu-icon" onclick="myFunction()">
-                <img src="depositphotos_232839020-stock-illustration-simple-list-menu-icon-rainbow.jpg" alt="Menu" width="60">
+                <img src="menu.jpg" alt="Menu" width="60">
             </button>
             <nav class="dropdown-menu" id="dropdownMenu">
-                <a href="#signup">Signup</a>
-                <a href="#login">Login</a>
+                <a href="signup.html">Signup</a>
+                <a href="#login" onclick="redirectToLogin()">Login</a>
                 <a href="#about">About</a>
             </nav>
         </div>
@@ -27,29 +27,64 @@
             <img src="logo.jpg" alt="Logo" width="180" height="100">
         </div>
         
-        <div class="auth-buttons">
-            <button class="btn login-btn" onclick="redirectToLogin()">Login</button>
-            <button id="contactBtn" class="btn contact-btn">Contact Us</button>
         
-    
-            <div class="contact-info hidden" id="contactInfo">
-                <ul>
-                    <li><a href="mailto:fathimanadhamk@gmail.com">fathimanadhamk@gmail.com</a></li>
-                    <li><a href="https://www.linkedin.com/in/fathima-nadha-mk-007260255" target="_blank">LinkedIn</a></li>
-                </ul>
+            <div class="auth-buttons">
+                <!-- Login Button -->
+                <button class="btn neon-btn" onclick="redirectToLogin()">Login</button>
+                
+                <!-- Contact Us Button -->
+                <button id="contactBtn" class="btn neon-btn" onclick="toggleContactInfo()">Contact Us</button>
+            
+                <!-- Contact Info -->
+                <div class="contact-info hidden" id="contactInfo">
+                    <ul>
+                        <li>
+                            <a style="font-size: 15px; background: linear-gradient(to right, #00c6ff, #0072ff); 
+                            -webkit-background-clip: text; color: transparent; text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 
+                            0 0 20px rgba(0, 132, 255, 0.6); animation: glow 2s infinite; font-family: 'Poppins', sans-serif;" 
+                            href="mailto:fathimanadhamk@gmail.com">fathimanadhamk@gmail.com</a>
+                        </li>
+                        <li>
+                            <a style="font-size: 15px; background: linear-gradient(to right, #00c6ff, #0072ff); 
+                            -webkit-background-clip: text; color: transparent; text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 
+                            0 0 20px rgba(0, 132, 255, 0.6); animation: glow 2s infinite; font-family: 'Poppins', sans-serif;" 
+                            href="https://www.linkedin.com/in/fathima-nadha-mk-007260255" target="_blank">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            
     </header>
-    
-    <main class="main text-white py-5">
-        <div class="container d-flex justify-content-center align-items-center ">
+    <main class="main text-white py-5" style="position: relative; overflow: hidden;">
+        <div class="container d-flex justify-content-center align-items-center">
             <div class="quiz-section text-center">
-                <h1>Welcome to CODE QUIZzz</h1>
-                <p>Test your coding knowledge and skills with fun and challenging questions!</p>
-                <button class="btn start-btn" onclick="nextpage()">Start Quiz</button>
+                <!-- Glowing Heading -->
+                <h1 style="font-size: 3.5rem; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; color: transparent; 
+                    text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 0 0 20px rgba(0, 132, 255, 0.6); animation: glow 2s infinite; font-family: 'Poppins', sans-serif;">
+                    Welcome to CODE QUIZzz
+                </h1>
+    
+                <!-- Styled Paragraph -->
+                <p style="font-size: 1.3rem; color: #f1f1f1; text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3); margin-top: 15px; 
+                    font-family: 'Roboto', sans-serif; line-height: 1.8;">
+                    Test your coding knowledge and skills with fun and challenging questions!
+                </p>
+    
+                <!-- Button with Hover Effect -->
+                <button class="btn start-btn" onclick="nextpage()" style="margin-top: 20px; background: linear-gradient(to right, #0072ff, #00c6ff); 
+                    color: #fff; border: none; padding: 12px 30px; font-size: 1.2rem; border-radius: 8px; font-family: 'Roboto', sans-serif; 
+                    box-shadow: 0px 4px 15px rgba(0, 132, 255, 0.6); transition: all 0.3s ease; cursor: pointer;">
+                    Start Quiz
+                </button>
             </div>
         </div>
     </main>
+        <!-- Background Animation -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #000);">
+            <div class="particle" style="width: 10px; height: 10px; background: #0072ff; position: absolute; border-radius: 50%; animation: float 4s infinite;"></div>
+        </div>
+    
+    
     
     <footer class="footer text-center text-white p-3">
         <p>&copy; 2024 CODE QUIZzz. All Rights Reserved.</p>

@@ -1,44 +1,36 @@
 // Get the final score from localStorage and display it
-const finalScore = localStorage.getItem('finalScore');
-if (finalScore) {
-    document.getElementById('finalScore').textContent = finalScore;
-}
+const finalScore = parseInt(localStorage.getItem('finalScore'), 10) || 0;
+const scoreDisplay = document.getElementById('finalScore');
+const feedbackMessage = document.getElementById('feedbackMessage');
 
-// Event listener for the button to trigger confetti
-document.getElementById('popBtn').addEventListener('click', function() {
-    const confettiContainer = document.getElementById('confetti-container');
-    createConfetti(confettiContainer, 100); // Create 100 confetti pieces
-});
-function triggerConfetti() {
-    const confettiContainer = document.getElementById('confetti-container');
-    createConfetti(confettiContainer, 100); // Create 100 confetti pieces
-}
+// Display the score
+scoreDisplay.textContent = finalScore;
 
-
-// Function to create confetti
-function createConfetti(container, numberOfPieces) {
-    container.innerHTML = ''; // Clear any previous confetti
-    for (let i = 0; i < numberOfPieces; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti'); // Add confetti class for styling
-        
-        // Randomize the confetti colors
-        const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'];
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        
-        // Randomize positions and animation directions
-        confetti.style.setProperty('--random-x', Math.random() * 2 - 1); // Randomize x-axis movement
-        confetti.style.setProperty('--random-y', Math.random() * 2);     // Randomize y-axis movement
-        
-        // Set random starting position within the container
-        confetti.style.left = `${Math.random() * 100}vw`;
-        confetti.style.top = `${Math.random() * 100}vh`;
-        
-        container.appendChild(confetti); // Append confetti to the container
-
-        // Remove the confetti after animation ends (2 seconds)
-        setTimeout(() => {
-            confetti.remove();
-        }, 2000);
+// Provide feedback based on the score
+if (finalScore < 4) {
+    feedbackMessage.textContent = "Try again! You can do better!";
+} else if (finalScore < 7) {
+    feedbackMessage.textContent = "Good job! Keep trying for an even better score!";
+} else {
+    feedbackMessage.textContent = "Excellent! You're amazing!";
+    function triggerConfetti() {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }, // Adjust starting height
+        });
     }
 }
+
+// Function to trigger confetti
+
+// Attach event listener to the confetti image
+document.querySelector('.confetti-trigger img').addEventListener('click', triggerConfetti);
+
+// Function for the "Try Again" button
+function tryAgain() {
+    window.location.href = "index.html"; // Redirect to quiz start page
+}
+
+// Attach event listener to the Try Again button
+document.getElementById('tryAgainBtn').addEventListener('click', tryAgain);

@@ -1,46 +1,57 @@
-
+/* General styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: rgb(16, 18, 19);
-    color: white;
+    color: #f4f1f1;
     display: flex;
-    flex-direction: column;
-    height: 100vh; /* Make sure the body takes full height */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-.h {
-    font-family: "Copperplate", fantasy;
+
+.score-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #110d0d;
+}
+
+/* Score message styling */
+.score-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #110d0d;
+}
+
+/* Score display styling */
+.score-display {
+    font-size: 24px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    text-align: center;
-    margin: 0; /* Remove negative margins */
+    margin-bottom: 20px;
+    color: #007BFF;
 }
 
-.p1 {
-    font-size: xx-large;
-    text-align: center;
+/* Button styling */
+button#tryAgainBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-
-
-/* Confetti container */
-#confetti-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none; /* Confetti won't block interactions */
-}
-
-/* Confetti styles - Rectangular shape */
-.confetti {
-    position: absolute;
-    width:6px;
-    height: 6px;
-    background-color: red; /* Confetti color */
-    opacity: 2px;
-    border-radius: 20px;
-    animation: confetti-fall 2s forwards, confetti-scatter 1s ease-out;
+button#tryAgainBtn:hover {
+    background-color: #0056b3;
 }

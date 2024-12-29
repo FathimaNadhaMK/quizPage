@@ -27,12 +27,33 @@ body {
     margin-left: 398px;
     margin-top:104px;
 }
+#submitBtn :hover{
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    box-shadow: 0 0 20px rgba(0, 132, 255, 1), 0 0 40px rgba(0, 132, 255, 0.8);
+
+}
 #submitBtn{
     margin-left: 444px;
     margin-top: 41px;
     height: 40px;
     width: 160px;
-    background:rgb(64, 228, 88);
+    
+    font-size: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 0 0 20px rgba(0, 132, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 132, 255, 0.5), 0 0 30px rgba(0, 132, 255, 0.3);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.submitBtn:active{
+    box-shadow: 0 0 25px rgba(0, 132, 255, 1), 0 0 50px rgba(0, 132, 255, 1);
+    transform: scale(0.98); /* Slight press effect */
+
 }
 #result{
       font-size: x-large;
