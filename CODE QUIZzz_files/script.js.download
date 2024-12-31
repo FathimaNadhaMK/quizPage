@@ -55,6 +55,3 @@ function db(){
 function python(){
   window.location.href='python.html';
 }
-function html(){
-  window.location.href='html.html';
-}
