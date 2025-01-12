@@ -1,91 +1,131 @@
-// Firebase Configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+
+// Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDAAGOqn66M7TVTzfL5u0EeA-NBWkbGgu0",
-  authDomain: "quiz-b229e.firebaseapp.com",
-  projectId: "quiz-b229e",
-  storageBucket: "quiz-b229e.firebasestorage.app",
-  messagingSenderId: "418890610117",
-  appId: "1:418890610117:web:3dee610a03bfacb21047ac",
-  measurementId: "G-X0ZG6ECP2S"
+    apiKey: "AIzaSyDAAGOqn66M7TVTzfL5u0EeA-NBWkbGgu0",
+    authDomain: "quiz-b229e.firebaseapp.com",
+    projectId: "quiz-b229e",
+    storageBucket: "quiz-b229e.appspot.com",
+    messagingSenderId: "418890610117",
+    appId: "1:418890610117:web:3dee610a03bfacb21047ac",
+    measurementId: "G-X0ZG6ECP2S"
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-function myFunction() {
-// Toggle the dropdown menu visibility
-document.getElementById("dropdownMenu").classList.toggle("show");
+// Login Form Handler
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            // Sign in the user
+            await signInWithEmailAndPassword(auth, email, password);
+            alert('Login successful!');
+            window.location.href = 'Quiz.html'; // Redirect after successful login
+        } catch (error) {
+            console.error(error);
+            if (error.code === 'auth/user-not-found') {
+                alert('No account found with this email. Please sign up.');
+                window.location.href = 'signup.html';
+            } else if (error.code === 'auth/wrong-password') {
+                alert('Incorrect password. Please try again.');
+            } else {
+                alert(`Error: ${error.message}`);
+            }
+        }
+    });
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-if (!event.target.closest('.menu-container')) {  // Adjust the class name here
-    var dropdowns = document.getElementsByClassName("dropdown-menu");
-    for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
+// Signup Form Handler
+const signupForm = document.getElementById('signupForm');
+if (signupForm) {
+    signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        try {
+            // Create the user
+            await createUserWithEmailAndPassword(auth, email, password);
+            alert('Account created successfully!');
+            window.location.href = 'login.html'; // Redirect after signup
+        } catch (error) {
+            console.error(error);
+            if (error.code === 'auth/email-already-in-use') {
+                alert('Email is already registered. Please log in.');
+                window.location.href = 'login.html';
+            } else {
+                alert(`Error: ${error.message}`);
+            }
+        }
+    });
+}
+
+// Redirect Functions
+window.redirectToLogin=function() {
+    window.location.href = 'login.html';
+}
+
+function redirectToSignUp() {
+    window.location.href = 'signup.html';
+}
+
+// Dropdown Menu Handler
+function toggleDropdown(event) {
+    event.stopPropagation();
+    document.getElementById('dropdownMenu').classList.toggle('show');
+}
+
+// Close dropdown when clicking outside
+window.onclick = function (event) {
+    if (!event.target.closest('.menu-container')) {
+        const dropdowns = document.getElementsByClassName('dropdown-menu');
+        for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove('show');
         }
     }
-}
 };
 
-document.getElementById('contactBtn').addEventListener('click', function () {
-var contactInfo = document.getElementById('contactInfo');
-contactInfo.classList.toggle('hidden'); // Toggle the 'hidden' class
+// Contact Info Toggle
+document.getElementById('contactBtn')?.addEventListener('click', function () {
+    const contactInfo = document.getElementById('contactInfo');
+    contactInfo?.classList.toggle('hidden');
 });
 
-function redirectToLogin() {
-window.location.href = "login.html";  // Redirect to login page
+// Page Navigation Functions
+function nextpage() {
+    window.location.href = 'Quiz.html';
 }
 
-// Firebase Login form validation and authentication
-function validateLoginForm() {
-const email = document.getElementById("username").value;  // Username field will be used for email
-const password = document.getElementById("password").value;
-
-if (email === "" || password === "") {
-    alert("Both email and password are required!");
-    return false; // Prevent form submission if fields are empty
+window.cprog= function() {
+    window.location.href = 'c.html';
 }
 
-// Firebase authentication logic
-auth.signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      console.log("Logged in as:", user.email);
-      window.location.href = 'home.html';  // Redirect to home page on successful login
-  })
-  .catch((error) => {
-      var errorMessage = error.message;
-      alert("Error: " + errorMessage);  // Show error message if login fails
-  });
-
-return false; // Prevent form submission to PHP
+window.javaprog=function() {
+    window.location.href = 'java.html';
 }
 
-function nextpage(){
-window.location.href='Quiz.html';
+window.db=function() {
+    window.location.href = 'dbms.html';
 }
 
-function cprog(){
-window.location.href='c.html';
+window.python=function() {
+    window.location.href = 'python.html';
 }
 
-function javaprog(){
-window.location.href='java.html';
-}
-
-function db(){
-window.location.href='dbms.html';
-}
-
-function python(){
-window.location.href='python.html';
-}
-
-function html(){
-window.location.href='html.html';
+window.html=function() {
+    window.location.href = 'html.html';
 }

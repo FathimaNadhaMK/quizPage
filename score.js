@@ -29,7 +29,7 @@ document.querySelector('.confetti-trigger img').addEventListener('click', trigge
 
 // Function for the "Try Again" button
 function tryAgain() {
-    window.location.href = "index.html"; // Redirect to quiz start page
+    window.location.href = "Quiz.html"; // Redirect to quiz start page
 }
 
 // Attach event listener to the Try Again button
