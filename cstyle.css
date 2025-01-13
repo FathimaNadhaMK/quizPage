@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(16, 18, 19);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: center; /* Centers the content vertically */
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Quiz Container */
+#quiz-container {
+    font-size: 30px; /* Adjust font size for better readability on small screens */
+    margin: 20px auto;
+    max-width: 100%; /* Prevents the container from being too wide on small screens */
+    text-align: center; /* Centers the text */
+}
+
+/* Submit Button */
+#submitBtn {
+    margin-top: 20px;
+    height: 40px;
+    width: 160px;
+    font-size: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 0 0 20px rgba(0, 132, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 132, 255, 0.5), 0 0 30px rgba(0, 132, 255, 0.3);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    display: block; /* Make it a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+#submitBtn:hover {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    box-shadow: 0 0 20px rgba(0, 132, 255, 1), 0 0 40px rgba(0, 132, 255, 0.8);
+}
+
+#submitBtn:active {
+    box-shadow: 0 0 25px rgba(0, 132, 255, 1), 0 0 50px rgba(0, 132, 255, 1);
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* Result Text */
+#result {
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #quiz-container {
+        font-size: 18px;
+    }
+
+    #submitBtn {
+        width: 140px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #result {
+        font-size: 1.25em;
+    }
+}
+
+@media (max-width: 480px) {
+    #quiz-container {
+        font-size: 16px;
+    }
+
+    #submitBtn {
+        width: 120px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #result {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,69 @@
+.signup_page{
+    background-color: rgb(16, 18, 19);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.container{
+    
+        background-color: #1f1f1f; /* Dark background for the container */
+        padding: 40px; /* Inner spacing */
+        border-radius: 10px; /* Rounded corners */
+        background: 
+            linear-gradient(rgb(17, 17, 17), rgb(17, 17, 17)) padding-box, 
+            linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) border-box; /* Inner and outer gradients */
+        border: 5px solid transparent; /* Transparent border to reveal the gradient */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        max-width: 400px; /* Maximum width of the container */
+        width: 100%; /* Responsive width */
+        text-align: center; /* Center-align text inside */
+    }
+    
+.container h1 {
+    margin-bottom: 20px;
+    color: #f7a1a1;
+}
+.container input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.container button{
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.container button:hover {
+    background-color: #45a049;
+}
+
+.container .link {
+    margin-top: 20px;
+}
+
+.container .link a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.container .link a:hover {
+    text-decoration: underline;
+}
