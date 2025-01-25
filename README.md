@@ -1,2 +1,12 @@
 # QuizPage
-An interactive quiz web application designed to provide  educational experience for users. The quiz dynamically renders questions, tracks scores, and provides real-time feedback. With a responsive design and customizable features, it works smoothly on desktops, tablets, and mobile devices. Built using technologies like HTML, CSS, JavaScript.
+
+A dynamic quiz page with separate files for different topics like C, Java, and more. This project is designed to test and enhance coding skills in a fun and interactive way.
+
+## Features
+- Topic-wise quizzes (e.g., C, Java)
+- Real-time scoring
+- Responsive design
+- User-friendly interface
+
+  ## Demo
+![Quiz Page Screenshot]
