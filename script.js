@@ -105,6 +105,26 @@ document.getElementById('contactBtn')?.addEventListener('click', function () {
     contactInfo?.classList.toggle('hidden');
 });
 
+const button = document.querySelector('.start-btn');
+const container = document.querySelector('.containerr');
+const goodJobText = document.querySelector('.textt');
+
+
+button.addEventListener('mouseover', () => {
+    container.style.opacity = 0;
+    goodJobText.style.fontSize="30px";
+    goodJobText.style.background = "linear-gradient( rgba(246, 232, 34, 0.78),rgba(239, 73, 18, 0.78),rgba(239, 21, 21, 0.78),rgba(167, 29, 221, 0.92), rgba(21, 115, 209, 0.76), rgba(32, 224, 15, 0.76))";
+    goodJobText.style.webkitBackgroundClip = "text";
+    goodJobText.style.color = "transparent"; // Make sure the text color is transparent so that the gradient is visible
+  });
+
+  button.addEventListener('mouseout', () => {
+    container.style.opacity = 1; // Reset opacity
+    goodJobText.style.background = ""; // Reset background
+    goodJobText.style.webkitBackgroundClip = ""; // Reset background clip
+    goodJobText.style.color = ""; // Reset color to default
+  });
+
 // Page Navigation Functions
 function nextpage() {
     window.location.href = 'Quiz.html';

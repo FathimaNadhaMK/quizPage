@@ -75,32 +75,8 @@ a:hover {
 .dropdown-menu.show {
     display: block;
 }
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    z-index: 1;
-  }
-  
-  .dropdown-menu.show {
-    display: block;
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #ddd;
-  }
-  
+
+
 
 /* Contact Section */
 .contact-section {
@@ -168,7 +144,10 @@ a:hover {
     font-size: 1rem;
     margin-bottom: 20px;
 }
-
+.containerr {
+    text-align: center;
+    transition: opacity 0.5s ease;
+  }
 .start-btn {
     background-color: #4CAF50;
     color: white;
@@ -177,13 +156,52 @@ a:hover {
     margin-left: 380px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2rem;
-    transition: background 0.3s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  
 }
 
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: magical-glow 5s infinite;
+    transform: rotate(1deg);
+    z-index: -1;
+  }
+  @keyframes magical-glow {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
 .start-btn:hover {
-    background-color: #45a049;
+  
+    transform: scale(1.6);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+      background-color: radial-gradient(violet,indigo,red,orange,green);
 }
+.start-button:hover ~ .containerr {
+    opacity: 0;
+  }
+
+  .textt{
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.5s ease;
+    top: 26%;
+    left:41%;
+  }
 
 /* Footer */
 .footer {
@@ -213,10 +231,10 @@ a:hover {
 @keyframes glow {
     0%,
     100% {
-        text-shadow: 0 0 10px rgba(0, 132, 255, 0.8), 0 0 20px rgba(0, 132, 255, 0.6);
+        text-shadow: 0 0 10px rgba(255, 81, 0, 0.49), 0 0 20px rgba(0, 174, 255, 0.299);
     }
     50% {
-        text-shadow: 0 0 15px rgba(0, 132, 255, 1), 0 0 30px rgba(0, 132, 255, 0.8);
+        text-shadow: 0 0 15px rgba(255, 89, 0, 0.534), 0 0 30px rgba(0, 100, 155, 0.814);
     }
 }
 
