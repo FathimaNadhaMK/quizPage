@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* General styling */
 body {
     margin: 0;
@@ -55,3 +56,62 @@ button#tryAgainBtn {
 button#tryAgainBtn:hover {
     background-color: #0056b3;
 }
+=======
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(16, 18, 19);
+    color: #f4f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.score-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #110d0d;
+}
+
+/* Score message styling */
+.score-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #110d0d;
+}
+
+/* Score display styling */
+.score-display {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+/* Button styling */
+button#tryAgainBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button#tryAgainBtn:hover {
+    background-color: #0056b3;
+}
+>>>>>>> 0e406f7240c13edf8d53329b9cc8171a8e2f9840

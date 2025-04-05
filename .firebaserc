@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 {
   "projects": {
     "default": "quiz-b229e"
   }
 }
+=======
+{
+  "projects": {
+    "default": "quiz-b229e"
+  }
+}
+>>>>>>> 0e406f7240c13edf8d53329b9cc8171a8e2f9840
