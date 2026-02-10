@@ -8,5 +8,4 @@ A dynamic quiz page with separate files for different topics like C, Java, and m
 - Responsive design
 - User-friendly interface
 
-  ## Demo
-![Quiz Page Screenshot]
+  
